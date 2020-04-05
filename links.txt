@@ -1,0 +1,2 @@
+https://travis-ci.org/github/martkrisz/newsapp-android
+https://github.com/martkrisz/newsapp-android
