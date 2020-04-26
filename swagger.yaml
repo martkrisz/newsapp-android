@@ -1,0 +1,86 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "NewsApp API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "martinkovics.krisztian@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/v2"
+tags:
+- name: "headlines"
+schemes:
+- "https"
+- "http"
+paths:
+  /top-headlines:
+    get:
+      tags:
+      - "headlines"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "country"
+        required: true
+        type: "string"
+        default: "us"
+
+      - in: "query"
+        name: "apiKey"
+        required: true
+        type: 'string'
+        
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/NewsApiResponse"
+        "400":
+          description: "Invalid status value"
+      
+
+definitions:
+  Source:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+  News:
+    type: "object"
+    properties:
+      source:
+        $ref: '#/definitions/Source'
+      author:
+        type: "string"
+      title:
+        type: "string"
+      description:
+        type: "string"
+      url:
+        type: "string"
+      urlToImage:
+        type: "string"
+      publishedAt:
+        type: "string"
+      content:
+        type: "string"
+  NewsApiResponse:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+      totalResult:
+        type: "integer"
+      articles:
+        type: "array"
+        items:
+          $ref: "#/definitions/News"
+  
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
