@@ -9,23 +9,23 @@ import org.jetbrains.annotations.NotNull
 @Entity(tableName = "news")
 data class News (
     @Embedded
-    val source: Source? = null,
+    var source: Source? = null,
     @ColumnInfo(name = "author")
-    val author: kotlin.String? = null,
+    var author: kotlin.String? = null,
     @PrimaryKey
     @NotNull
     @ColumnInfo(name = "title")
-    val title: kotlin.String,
+    var title: kotlin.String,
     @ColumnInfo(name = "description")
-    val description: kotlin.String? = null,
+    var description: kotlin.String? = null,
     @ColumnInfo(name = "url")
-    val url: kotlin.String? = null,
+    var url: kotlin.String? = null,
     @ColumnInfo(name = "urlToImage")
-    val urlToImage: kotlin.String? = null,
+    var urlToImage: kotlin.String? = null,
     @ColumnInfo(name = "publishedAt")
-    val publishedAt: kotlin.String? = null,
+    var publishedAt: kotlin.String? = null,
     @ColumnInfo(name = "content")
-    val content: kotlin.String? = null
+    var content: kotlin.String? = null
 ) {
 
 }
