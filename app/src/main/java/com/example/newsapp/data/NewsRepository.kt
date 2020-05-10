@@ -1,6 +1,5 @@
 package com.example.newsapp.data
 
-import com.example.newsapp.Injection
 import com.example.newsapp.api.NewsApi
 import com.example.newsapp.db.NewsDao
 import com.example.newsapp.models.NewsApiResponse
