@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -44,6 +46,9 @@ dependencies {
     def kotlinCoroutineVersion = "1.0.1"
     def picassoVersion = "2.71828"
     def room_version = "2.2.5"
+
+    implementation 'com.google.firebase:firebase-analytics:17.4.1'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
